@@ -54,17 +54,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="8dp">
+            android:orientation="vertical"
+            android:padding="4dp">
 
-            <TextView android:id="@+id/btnPlayPause" style="@style/TopBarIcon" android:text="▶" android:textSize="22sp" />
-            <TextView android:id="@+id/tvTimecode"
-                android:layout_width="wrap_content"
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="00:00 / 00:00"
-                android:textColor="@color/text_secondary" />
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView android:id="@+id/btnPlayPause" style="@style/TopBarIcon" android:text="▶" android:textSize="22sp" />
+                <TextView android:id="@+id/tvTimecode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="00:00 / 00:00"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
         </LinearLayout>
     </FrameLayout>
 
