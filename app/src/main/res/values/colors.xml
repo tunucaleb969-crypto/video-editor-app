@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="editor_bg">#121212</color>
+    <color name="panel_bg">#1E1E1E</color>
+    <color name="toolbar_bg">#1A1A1A</color>
+    <color name="accent">#4F8CFF</color>
+    <color name="track_video">#2E5C8A</color>
+    <color name="track_audio">#3A6B4A</color>
+    <color name="text_primary">#EDEDED</color>
+    <color name="text_secondary">#9A9A9A</color>
+</resources>
