@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.FrameLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.exoplayer.ExoPlayer
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnPlayPause: TextView
     private val handler = Handler(Looper.getMainLooper())
     private var userSeeking = false
+    private var clipSelected = false
 
     private val pickVideo = registerForActivityResult(
         ActivityResultContracts.GetContent()
@@ -55,6 +57,13 @@ class MainActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(sb: SeekBar?) { userSeeking = true }
             override fun onStopTrackingTouch(sb: SeekBar?) { userSeeking = false }
         })
+
+        findViewById<FrameLayout>(R.id.clipVideoWrapper).setOnClickListener {
+            clipSelected = !clipSelected
+            it.setBackgroundColor(
+                if (clipSelected) resources.getColor(R.color.accent, theme) else android.graphics.Color.TRANSPARENT
+            )
+        }
 
         startProgressUpdates()
     }
