@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/editor_bg">
+
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:background="@color/toolbar_bg"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Untitled Project"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <TextView android:id="@+id/btnUndo" style="@style/TopBarIcon" android:text="↶" />
+        <TextView android:id="@+id/btnRedo" style="@style/TopBarIcon" android:text="↷" />
+        <TextView android:id="@+id/btnExport"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/accent"
+            android:text="Export"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:paddingHorizontal="14dp" />
+    </LinearLayout>
+
+    <!-- PREVIEW -->
+    <FrameLayout
+        android:id="@+id/previewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No media loaded"
+            android:textColor="@color/text_secondary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <TextView android:id="@+id/btnPlayPause" style="@style/TopBarIcon" android:text="▶" android:textSize="22sp" />
+            <TextView android:id="@+id/tvTimecode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="00:00 / 00:00"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- TIMELINE -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="@color/panel_bg">
+
+        <!-- ruler -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="0s          5s          10s          15s"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            android:paddingStart="8dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+
+                <!-- video track -->
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="34dp" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <View android:layout_width="180dp" android:layout_height="match_parent" android:background="@color/track_video" />
+                </LinearLayout>
+
+                <!-- text track -->
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="24dp" android:orientation="horizontal" android:layout_marginBottom="4dp">
+                    <View android:layout_width="90dp" android:layout_height="match_parent" android:background="@color/accent" />
+                </LinearLayout>
+
+                <!-- audio track -->
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="30dp" android:orientation="horizontal">
+                    <View android:layout_width="180dp" android:layout_height="match_parent" android:background="@color/track_audio" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- BOTTOM TOOLBAR -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/toolbar_bg">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/toolMedia" style="@style/BottomToolItem" android:text="Media" />
+            <TextView android:id="@+id/toolAudio" style="@style/BottomToolItem" android:text="Audio" />
+            <TextView android:id="@+id/toolText" style="@style/BottomToolItem" android:text="Text" />
+            <TextView android:id="@+id/toolStickers" style="@style/BottomToolItem" android:text="Stickers" />
+            <TextView android:id="@+id/toolEffects" style="@style/BottomToolItem" android:text="Effects" />
+            <TextView android:id="@+id/toolTransitions" style="@style/BottomToolItem" android:text="Transitions" />
+            <TextView android:id="@+id/toolFilters" style="@style/BottomToolItem" android:text="Filters" />
+            <TextView android:id="@+id/toolAI" style="@style/BottomToolItem" android:text="AI" />
+            <TextView android:id="@+id/toolCaptions" style="@style/BottomToolItem" android:text="Captions" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>
