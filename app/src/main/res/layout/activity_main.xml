@@ -130,26 +130,54 @@
     </LinearLayout>
 
     <!-- BOTTOM TOOLBAR -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@color/toolbar_bg">
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="@color/toolbar_bg"
+    android:scrollbars="none">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/toolBar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingHorizontal="4dp">
 
-            <TextView android:id="@+id/toolMedia" style="@style/BottomToolItem" android:text="Media" />
-            <TextView android:id="@+id/toolAudio" style="@style/BottomToolItem" android:text="Audio" />
-            <TextView android:id="@+id/toolText" style="@style/BottomToolItem" android:text="Text" />
-            <TextView android:id="@+id/toolStickers" style="@style/BottomToolItem" android:text="Stickers" />
-            <TextView android:id="@+id/toolEffects" style="@style/BottomToolItem" android:text="Effects" />
-            <TextView android:id="@+id/toolTransitions" style="@style/BottomToolItem" android:text="Transitions" />
-            <TextView android:id="@+id/toolFilters" style="@style/BottomToolItem" android:text="Filters" />
-            <TextView android:id="@+id/toolAI" style="@style/BottomToolItem" android:text="AI" />
-            <TextView android:id="@+id/toolCaptions" style="@style/BottomToolItem" android:text="Captions" />
+        <LinearLayout android:id="@+id/toolMedia" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="🎬" />
+            <TextView style="@style/ToolLabel" android:text="Media" />
         </LinearLayout>
-    </HorizontalScrollView>
-
-</LinearLayout>
+        <LinearLayout android:id="@+id/toolAudio" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="🎵" />
+            <TextView style="@style/ToolLabel" android:text="Audio" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolText" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="T" />
+            <TextView style="@style/ToolLabel" android:text="Text" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolStickers" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="⭐" />
+            <TextView style="@style/ToolLabel" android:text="Stickers" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolEffects" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="✨" />
+            <TextView style="@style/ToolLabel" android:text="Effects" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolTransitions" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="⇄" />
+            <TextView style="@style/ToolLabel" android:text="Transitions" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolFilters" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="◑" />
+            <TextView style="@style/ToolLabel" android:text="Filters" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolAI" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="🤖" />
+            <TextView style="@style/ToolLabel" android:text="AI" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/toolCaptions" style="@style/ToolItem">
+            <TextView style="@style/ToolIcon" android:text="💬" />
+            <TextView style="@style/ToolLabel" android:text="Captions" />
+        </LinearLayout>
+    </LinearLayout>
+</HorizontalScrollView>
